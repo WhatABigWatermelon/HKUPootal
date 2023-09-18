@@ -1,20 +1,28 @@
 <template>
-  <el-card v-for="news in newsList">
-    <el-row>
-      <el-col :span="16">
+  <el-container>
+    <el-main>
+      <el-card v-for="news in newsList">
         <el-row>
-          <el-link :underline="true" :href="news.url">{{ news.title }}</el-link>
+          <el-col :span="16">
+            <el-row>
+              <el-link :underline="true" :href="news.url">{{
+                news.title
+              }}</el-link>
+            </el-row>
+            <el-row>
+              <el-col :span="12">{{ news.source }}</el-col>
+              <el-col :span="12">{{ news.author }}</el-col>
+            </el-row>
+            <el-row>{{ news.description }}</el-row>
+            <el-row>{{ news.published_at }}</el-row>
+          </el-col>
+          <el-col :span="8">
+            <el-image :src="news.image" :fit="fill" />
+          </el-col>
         </el-row>
-        <el-row>
-          <el-col :span="12">{{ news.source }}</el-col>
-          <el-col :span="12">{{ news.author }}</el-col>
-        </el-row>
-        <el-row>{{ news.description }}</el-row>
-        <el-row>{{ news.published_at }}</el-row>
-      </el-col>
-      <el-col :span="8"> <el-image :src="news.image" :fit="fill" /> </el-col>
-    </el-row>
-  </el-card>
+      </el-card>
+    </el-main>
+  </el-container>
 </template>
 
 <script>
