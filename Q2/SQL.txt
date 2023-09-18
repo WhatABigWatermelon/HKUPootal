@@ -1,0 +1,5 @@
+SELECT Employee.emp_name, max(Employee.emp_salary), Department.dept_name
+From Employee LEFT JOIN Department
+ON Employee.dept_id = Department.dept_id
+GROUP BY Employee.dept_id
+ORDER BY Department.dept_name 
