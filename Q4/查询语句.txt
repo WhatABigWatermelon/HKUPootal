@@ -1,0 +1,13 @@
+GET /_search
+{
+    "query": {
+        "match": {
+            "post_msg": "HKUPootal"
+        }
+    },
+    "sort": {
+        "post_create_time": {
+            "order": "desc"
+        }
+    }
+}
